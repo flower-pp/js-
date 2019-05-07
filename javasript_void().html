@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>javascript:void();test</title>
+    <style type="text/css">
+    body{
+        position:relative;
+        padding:0px;
+        margin:0px;
+        background :cornflowerblue;
+        width:800px;
+        height:1060px;
+    }
+    button{
+        position:absolute;
+        top:50%;
+        left:50%;
+        width:200px;
+        height:15px;
+        border:2px  solid rgba(5, 5, 5, 0.25);
+        border-radius: 50%;
+        text-align: center;
+        font-size:10px;
+    }
+
+   .container{
+       position: absolute;
+       top:80%;
+       left:50%;
+       display:flex;
+       justify-items: center;
+       align-items: center;
+   }
+   .a1{
+       padding:20px;
+   }
+
+    </style>
+</head>
+<body>
+    <button>click me</button>
+    <!-- //点击test-void页面不会跳转到页面顶部，可以在页面下端设置返回顶部按钮就可以使用这个 -->
+    <div class="container">
+    <a  class="a1" href = "javascript:void(0);" onClick="document.querySelector('button').textContent='2';">test-void</a>
+   <!-- //点击test-#页面会议跳转到也页面顶部，更适合我们做局部的js工作 -->
+    <a href = "#" onclick="test()">test-#</a>
+    </div>
+    <script>
+        function test(){
+            var btn = document.querySelector('button');
+            btn.textContent = '3';
+        }
+    </script>
+</body>
+</html>
